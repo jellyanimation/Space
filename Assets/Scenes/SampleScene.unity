@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23ac668c4e5fd8428d1faad550b5123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childTransform: {fileID: 0}
+  childTransform: {fileID: 364825451}
 --- !u!135 &750901287
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -7,11 +7,13 @@ public class Move : MonoBehaviour
 
     void Start()
     {
-        //자신의 전역 위치를 (0,-1,0)으로 변경
+        //자신의 전역 위치를 (0,-1,0)으로 변경 . position은 global 순간이동
         transform.position = new Vector3(0,-1,0);
 
-        //자식의 지역 위치를 (0,2,0)으로 변경
+
+        //자식의 지역 위치를 (0,2,0)으로 변경 . transform은 local 평행이동
         childTransform.localPosition = new Vector3(0,2,0);
+
 
         //자신의 전역 회전을 (0,0,30)으로 변경
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, 30));
@@ -30,7 +32,9 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //위쪽 방향키를 누르면 초당 (0,1,0)의 속도로 평행이동
-            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime);
+            // transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime);
+            // transform.position = transform.position + transform.up * 1 * Time.deltaTime;
+            transform.position += transform.up * Time.deltaTime; //지역조표로 연산
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
